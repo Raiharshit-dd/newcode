@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verve — Resume Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-grain"></div>
+  <header class="topbar">
+    <a class="logo" href="#"><span>v</span>erve</a>
+    <nav>
+      <a class="active" href="#builder">Builder</a>
+      <a href="#feedback">Insights</a>
+      <a href="#">Templates</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" aria-label="Notifications">⌁</button>
+      <div class="avatar">AS</div>
+    </div>
+  </header>
+
+  <main id="builder">
+    <section class="intro">
+      <div>
+        <p class="eyebrow">YOUR CAREER, DISTINCTLY TOLD</p>
+        <h1>Make your next move<br><em>memorable.</em></h1>
+      </div>
+      <div class="intro-copy">
+        <p>Build a resume that sounds like you, then let our smart review make every word work harder.</p>
+        <button class="text-button" id="saveButton">Save draft <span>↗</span></button>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <aside class="editor-panel">
+        <div class="progress-row">
+          <span>Resume completion</span>
+          <strong id="completion">78%</strong>
+        </div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+        <div class="section-title"><span>01</span> Basics <i>✓</i></div>
+        <div class="section-title"><span>02</span> Experience <i>✓</i></div>
+        <div class="section-title open"><span>03</span> Profile</div>
+        <div class="form-area">
+          <label for="headline">Professional headline</label>
+          <input id="headline" value="Product Designer &amp; Creative Strategist" />
+          <div class="label-row"><label for="summary">A little about you</label><span id="wordCount">49 / 80 words</span></div>
+          <textarea id="summary">I’m a product designer who turns complicated ideas into clear, useful experiences. For the past 6 years, I’ve partnered with ambitious teams to bring thoughtful digital products from first sketch to launch.</textarea>
+          <button class="enhance-button" id="enhanceButton"><span class="spark">✦</span> Enhance with Verve AI <span>→</span></button>
+        </div>
+        <div class="section-title"><span>04</span> Skills <i>✓</i></div>
+        <div class="section-title"><span>05</span> Education <i>✓</i></div>
+        <div class="section-title"><span>06</span> Extras</div>
+      </aside>
+
+      <article class="resume-sheet" aria-label="Resume preview">
+        <div class="sheet-topline"></div>
+        <div class="resume-header">
+          <div><p class="resume-kicker">PRODUCT DESIGNER</p><h2>Amelia<br>Sterling</h2></div>
+          <p class="contact">New York, NY<br>amelia.sterling@email.com<br>linkedin.com/in/ameliasterling</p>
+        </div>
+        <div class="resume-columns">
+          <div class="resume-main">
+            <section><h3>Profile</h3><p id="previewSummary">I’m a product designer who turns complicated ideas into clear, useful experiences. For the past 6 years, I’ve partnered with ambitious teams to bring thoughtful digital products from first sketch to launch.</p></section>
+            <section><h3>Experience</h3><div class="job"><div><h4>Senior Product Designer</h4><p class="company">Fieldwork, Brooklyn, NY</p></div><span>2021 — Present</span></div><ul><li>Led end-to-end design for a B2B platform used by 80k+ teams.</li><li>Built and scaled a design system across three product squads.</li></ul><div class="job"><div><h4>Product Designer</h4><p class="company">Northstar Studio, New York, NY</p></div><span>2018 — 2021</span></div></section>
+          </div>
+          <aside class="resume-side"><section><h3>Expertise</h3><p>Product strategy<br>UX / UI design<br>Design systems<br>Prototyping<br>Team leadership</p></section><section><h3>Education</h3><h4>BFA, Interaction Design</h4><p>School of Visual Arts<br>2014 — 2018</p></section></aside>
+        </div>
+      </article>
+
+      <aside class="insights-panel" id="feedback">
+        <div class="insights-heading"><p class="eyebrow">LIVE REVIEW</p><h2>How it reads</h2></div>
+        <div class="score-card"><div class="score-ring"><span id="score">84</span><small>/100</small></div><div><h3>Strong start</h3><p>Your resume is clear, confident, and nearly ready to share.</p></div></div>
+        <div class="meter"><div class="meter-label"><span>Clarity</span><strong>Excellent</strong></div><div class="meter-track"><i style="width:92%"></i></div></div>
+        <div class="meter"><div class="meter-label"><span>Impact</span><strong>Good</strong></div><div class="meter-track"><i style="width:72%"></i></div></div>
+        <div class="meter"><div class="meter-label"><span>Keywords</span><strong>Needs work</strong></div><div class="meter-track amber"><i style="width:51%"></i></div></div>
+        <div class="feedback-card"><span class="tip-icon">✦</span><div><h3>Make impact measurable</h3><p>Add a result to your Fieldwork role. Numbers help recruiters see the scale of your work.</p><button id="addMetric">Add a suggestion <span>→</span></button></div></div>
+        <div class="feedback-card"><span class="tip-icon">↗</span><div><h3>One keyword to add</h3><p>“Cross-functional” appears often in roles like yours.</p><button id="addKeyword">Add to profile <span>→</span></button></div></div>
+        <button class="download-button" id="downloadButton">Download resume <span>↓</span></button>
+      </aside>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
